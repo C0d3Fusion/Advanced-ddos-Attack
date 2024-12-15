@@ -35,8 +35,8 @@ Follow the steps below to run the script:
 ### 1. Clone the Repository
 Clone the repository containing the script:
 ```bash
-git clone https://github.com/<your-username>/<repository-name>.git
-cd <repository-name>
+git clone https://github.com/C0d3Fusion/Advanced-ddos-Attack.git
+cd ddos.py
 ```
 
 ### 2. Run the Script
@@ -95,7 +95,7 @@ Hereâ€™s a quick reference for all necessary commands:
 
 2. Clone this repository:
    ```bash
-   git clone https://github.com/<your-username>/<repository-name>.git
+   git clone https://github.com/C0d3Fusion/Advanced-ddos-Attack.git
    cd ddos.py
    ```
 
