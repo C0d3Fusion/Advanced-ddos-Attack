@@ -1,143 +1,69 @@
 
-# Advanced Website Stress Testing Script
+# Advanced DDoS Attack Script
 
-This Python script is designed for stress testing your website by sending high-concurrency requests. It allows you to test your server's load-handling capacity and performance under heavy traffic. The script is compatible with **Termux** and supports both `GET` and `POST` requests.
+This is an advanced DDoS attack script that simulates an HTTPS flood using multiple threads. The script uses Python's `ssl` and `socket` libraries to create and send requests to the target website, simulating a flood of traffic.
 
----
+## Features:
+- Sends randomized HTTP GET requests with custom user agents.
+- Allows the user to input the target website URL and port.
+- Automatically resolves the target website's IP address.
+- Supports multi-threaded attack for higher intensity.
+- You can specify the duration and number of threads.
 
-## **Features**
-- Supports both `GET` and `POST` request types.
-- Allows **randomized URL paths** and headers to simulate real user behavior.
-- Customizable concurrency and request numbers for flexible load testing.
-- **Thread pooling** for efficient resource usage.
-- Lightweight and optimized for Termux and other Linux-based environments.
+## Requirements
 
----
+- Python 3.x
+- Termux (for Android) or any Linux-based system
 
-## **Requirements**
-To use this script in Termux, ensure you have the following installed:
-1. **Python** (version 3.x or later)
-2. Python library **requests**
+### Required Python Libraries:
+1. **ssl** - for creating secure SSL connections.
+2. **socket** - for managing network connections.
+3. **threading** - to handle multiple threads for the attack.
+4. **random** - to select random user agents.
+5. **time** - for managing attack duration.
+6. **sys** - for handling exceptions.
 
-### Install Required Packages
-Run the following commands in Termux to install the required packages:
+## Installation on Termux:
+
+Follow these steps to install the required dependencies and run the script on Termux:
+
+### Step 1: Install Python
 ```bash
 pkg update && pkg upgrade
 pkg install python
-pip install requests
 ```
 
----
+### Step 2: Install Required Python Modules
+```bash
+pip install requests
+pip install socket
+```
 
-## **How to Use**
-Follow the steps below to run the script:
-
-### 1. Clone the Repository
-Clone the repository containing the script:
+### Step 3: Clone the Repository (Optional)
 ```bash
 git clone https://github.com/C0d3Fusion/Advanced-ddos-Attack.git
-cd ddos.py
+cd Advanced-ddos-Attack
 ```
 
-### 2. Run the Script
-Run the script using Python:
+### Step 4: Run the Script
 ```bash
-python ddos.py
+python HeavyDdos.py
 ```
 
-### 3. Provide Inputs
-When the script runs, it will ask for the following inputs:
-1. **Target Website URL:**  
-   Enter the URL of the website you want to test (e.g., `https://example.com`).
-2. **Total Number of Requests:**  
-   Enter the total number of HTTP requests to be sent (e.g., `10000`).
-3. **Number of Concurrent Threads:**  
-   Specify the number of threads for sending requests (e.g., `500`).
-4. **Request Type:**  
-   Enter `GET` or `POST` based on your test requirements.
-5. **POST Data (Optional):**  
-   If using `POST`, provide a key-value pair for the payload.
+## Usage:
 
-#### Example Input
-```plaintext
-Enter the target website URL (with https://): https://example.com
-Enter the total number of requests: 10000
-Enter the number of concurrent threads: 500
-Enter the request type (GET/POST): POST
-Enter POST data key: username
-Enter POST data value: admin
-```
+1. **Enter the target website URL** (e.g., `www.example.com`).
+2. **Enter the target port** (default is 443 for HTTPS).
+3. **Specify the attack duration** (in seconds).
+4. **Input the number of threads** to use for the attack (e.g., 5000).
 
----
+## Disclaimer:
+**This script is for educational purposes only.** It should never be used for illegal activities. Use it responsibly to understand how DDoS attacks work and for testing purposes in environments where you have permission to do so.
 
-## **Expected Output**
-The script will display the status of each request sent to the target website. Example:
-```plaintext
-Request to https://example.com/login sent: 200
-Request to https://example.com/api/data sent: 404
-Request to https://example.com/products sent: 200
-Error for https://example.com/random-page: ReadTimeout
-```
+## Contributing
 
-At the end, the script will show the total time taken to complete the test.
+Feel free to fork the repository, submit issues, and create pull requests to improve the functionality of the script.
 
----
+## License
 
-## **Commands Summary**
-Hereâ€™s a quick reference for all necessary commands:
-
-1. Update Termux and install Python:
-   ```bash
-   pkg update && pkg upgrade
-   pkg install python
-   pip install requests
-   ```
-
-2. Clone this repository:
-   ```bash
-   git clone https://github.com/C0d3Fusion/Advanced-ddos-Attack.git
-   cd ddos.py
-   ```
-
-3. Run the script:
-   ```bash
-   ddos.py
-   ```
-
----
-
-## **Important Notes**
-1. **Ethical Usage Only:**  
-   - Use this script **only for testing your own website** or with proper authorization.  
-   - Unauthorized usage on third-party websites can lead to legal issues.
-
-2. **Server Monitoring:**  
-   - Ensure your server's resources (CPU, RAM, bandwidth) can handle the stress test.  
-   - For AWS-hosted websites, be aware of security features like rate-limiting and auto-scaling.
-
-3. **Testing Environment:**  
-   - It is recommended to run this script on a staging environment to avoid affecting production servers.
-
----
-
-## **Troubleshooting**
-If the script doesn't work as expected:
-1. Verify the Python version installed:
-   ```bash
-   python --version
-   ```
-2. Ensure the `requests` library is installed:
-   ```bash
-   pip install requests
-   ```
-3. Check the URL and parameters you are entering during input.
-
----
-
-## **License**
-This script is for **educational purposes** and **ethical use** only. Any misuse or unauthorized use is strictly prohibited.
-
----
-
-## **Disclaimer**
-The developer is not responsible for any misuse of this script. Use it at your own risk and ensure it aligns with your hosting provider's acceptable use policies.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
